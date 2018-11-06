@@ -1,0 +1,59 @@
+{
+  "name": "dc-bump",
+  "version": "0.0.0",
+  "description": "A CLI to bump the version of a docker-compose service & commit the change",
+  "scripts": {
+    "build": "tsc",
+    "coverage": "nyc --reporter=html npm test -s",
+    "preversion": "tools/preversion",
+    "prettier": "prettier --write ./**/*.{js,ts,json,css,md}",
+    "test": "mocha -r ts-node/register -r tsconfig-paths/register 'spec/**/*.ts'"
+  },
+  "bin": "dist/cli.js",
+  "types": "dist/index.d.ts",
+  "author": "Rob Anderson (https://github.com/robb-j)",
+  "license": "ISC",
+  "repository": "github:robb-j/docker-compose-bump",
+  "bugs": "https://github.com/robb-j/docker-compose-bump/issues",
+  "homepage": "https://github.com/robb-j/docker-compose-bump#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "keywords": [
+    "docker",
+    "docker-compose",
+    "version",
+    "bump",
+    "git",
+    "commit"
+  ],
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "tsconfig-paths": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.1",
+    "chai": "^4.2.0",
+    "husky": "^1.1.2",
+    "lint-staged": "^8.0.3",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "prettier": "1.14.3",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.4"
+  }
+}

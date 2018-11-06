@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+npm run test -s > /dev/null
+npm run build -s
+git add dist
+chmod +x dist/cli.js
