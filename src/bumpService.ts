@@ -55,7 +55,7 @@ export async function bumpService(
 
     // Commit to git
     await exec(
-      `git commit -m '${emoji} Upgraded ${serviceName} to ${newVersion}'`
+      `git commit -m '${emoji} Upgrade ${serviceName} to ${newVersion}'`
     )
     console.log(tick, `Commited '${file}'`)
 
