@@ -41,7 +41,7 @@ async function bumpService(serviceName, newVersion, { file, emoji, push } = defa
         await exec(`git add ${file}`);
         console.log(tick, `Staged '${file}'`);
         // Commit to git
-        await exec(`git commit -m '${emoji} Upgraded ${serviceName} to ${newVersion}'`);
+        await exec(`git commit -m '${emoji} Upgrade ${serviceName} to ${newVersion}'`);
         console.log(tick, `Commited '${file}'`);
         // Optionally push
         if (push) {
